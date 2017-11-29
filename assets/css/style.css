@@ -1,0 +1,142 @@
+html,
+body {
+    font-family: 'Lato', sans-serif;
+    color: black;
+}
+
+.section-title {
+    padding-top: 10px;
+}
+
+.arrow {
+    vertical-align: middle;
+    position: relative;
+}
+
+#welcome {
+    background-image: url("https://images.pexels.com/photos/281260/pexels-photo-281260.jpeg?w=940&h=650&auto=compress&cs=tinysrgb");
+    background-image: url(assets/images/bg.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    box-shadow: 0px 14px 27px 3px rgba(194, 194, 194, 1);
+}
+
+.carousel-inner .active.left {
+    left: -25%;
+}
+
+.carousel-inner .next {
+    left: 25%;
+}
+
+.carousel-inner .prev {
+    left: -25%;
+}
+
+.carousel-control {
+    width: 4%;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+    margin-left: 15px;
+    background-image: none;
+}
+
+.navbar {
+    background: transparent;
+    margin-top: 20px;
+}
+
+#main-content {
+    margin-top: 30px;
+}
+
+#main-content-buttons {
+    margin-top: 100px;
+}
+
+h1 {
+    font-size: 75px;
+    font-weight: bolder;
+}
+
+h4 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+/* Section 2 Begin */
+
+#section-2 {
+    background-color: whitesmoke;
+}
+
+#section-2 h1 {
+    font-size: 40px;
+    padding-bottom: 20px;
+}
+
+#section-2 p {
+    text-align: justify;
+    font-size: 20px;
+}
+
+
+/*footer begin */
+
+.footer {
+    background-color: #06263F;
+    color: whitesmoke;
+    position: absolute;
+    width: 100%;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+    text-decoration: none;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-google {
+    background: #dd4b39;
+    color: white;
+}
+
+#options {
+    font-size: 20px;
+}
+
+.courses div {
+    height: 300px;
+    background-color: white;
+    border-color: gray;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.courses {
+    text-align: center;
+}

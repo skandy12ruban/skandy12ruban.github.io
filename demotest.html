@@ -1,0 +1,388 @@
+<html>
+
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="assets/css/style.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel=”stylesheet” href="assets/css/jquery.dialog.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/css/bootstrap-notify.min.css" />
+    <style>
+        html,
+        body,
+        section {
+            font-family: 'Lato', sans-serif;
+        }
+    </style>
+</head>
+
+<body style="background-color:#06B6FF">
+    <section id="welcome" style="background-image: url('assets/images/bg.jpg')">
+        <div class="container">
+            <nav class="navbar ">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span> 
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav nav-justified navbar-right">
+                            <li class="active"><a href="#" style="color:black; font-size:15px ;font-weight: bold">Home</a></li>
+                            <li><a href="#" style="color:black; font-size:15px; font-weight: bold">About Us</a></li>
+                            <li><a href="#" style="color:black; font-size:15px; font-weight: bold">Business</a></li>
+                            <li><a href="#" style="color:black; font-size:15px; font-weight: bold">Contact</a></li>
+                            <li><a href="#" style="color:black; font-size:15px; font-weight: bold"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                            <li><a href="#" style="color:black; font-size:15px; font-weight: bold"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="row" id="startdiv">
+                <h2>Take your demo Test</h2>
+                <hr>
+                <p>Fill the form below and click start to take your test.</p>
+                <div class="col-md-6">
+                    <form class="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="pname" placeholder="Enter your Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Enter your Email-ID">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Enter your Phone number">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-lg btn-success" type="button" id="start">Start demo test</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <img src="assets/images/demotest.jpg" class="img-responsive" />
+                </div>
+            </div>
+            <div class="row" id="testdiv">
+                <h2 align="center">
+                    Welcome, <b id="name" style="color:whitesmoke"></b></h2> <br>
+                </h2>
+                <h4>Answer all the questions below.</h4>
+                </br>
+
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-md-11">
+                                <h3 id="question"></h3>
+                            </div>
+                            <div class="col-md-1">
+                                <h3 id="questno"></h3>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="panel-body row" id="answer">
+                        <form class="form-group">
+                            <div class="form-control">
+                                <label id="option1"><input type="radio" name="optradio" id="agree">&nbsp;</label>
+                            </div>
+                            <div class="form-control">
+                                <label id="option2"><input type="radio" name="optradio" id="neutral">&nbsp;</label>
+                            </div>
+                            <div class="form-control">
+                                <label id="option3"><input type="radio" name="optradio" id="disagree">&nbsp;</label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row" style="padding-bottom:40px ;padding-top:40px">
+                        <div class="col-md-2 col-md-offset-3" align="center"><button class="btn btn-block btn-info" id="previous">previous</button></div>
+                        <div class="col-md-2" align="center"><button class="btn btn-block btn-success" id="submit">submit</button></div>
+                        <div class="col-md-2" align="center"><button class="btn btn-block btn-info" id="next">next</button></div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row" id="answerdiv">
+                <p id="ans"></p>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 align="center">
+                            Your results, <b id="resultname" style="color:whitesmoke"></b></h2> <br>
+                        </h2>
+                    </div>
+                    <div class="panel-body row">
+                        <div class="col-md-6">
+                            <canvas id="chart" class="col-md-12" height="400px"></canvas>
+                        </div>
+                        <div class="col-md-6" align="center">
+                            <h2>Need to pay attention?</h2>
+                            <a href="" class="btn btn-lg btn-success">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <footer>
+            <div class="nav back">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4" align="center">
+                            <h4 align="center">Contact Us</h4>
+                            <hr>
+                            <p>Alagar Acadamy,<br>AP-872, H-Block,<br> 2nd street, 12th main road, <br>Annanagar, Chennai- 600040.
+                            </p>
+                        </div>
+                        <div class="col-md-4" align="center">
+                            <h4>Follow Us</h4>
+                            <hr align="center">
+                            <a href="#" class="fa fa-facebook"></a>
+                            <a href="#" class="fa fa-twitter"></a>
+                            <a href="#" class="fa fa-google"></a>
+                        </div>
+                        <div class="col-md-4" align="center">
+                            <h4 align="center">Join US</h4>
+                            <hr>
+                            <p>
+                                Please send us a mail to <br>
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to="> carrers@alagaracadamy.com</a>
+                            </p>
+                        </div>
+                    </div>
+                    <br>
+                    <div align="center">
+                        <p>&copy2017, Orange Consultants Pvt. Ltd. <br> All copyrights Reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mouse0270-bootstrap-notify/3.1.7/bootstrap-notify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#testdiv").hide();
+            $("#answerdiv").hide();
+            var options = [
+                ["You accept it—it's a great chance to learn something about how a dictator's mind works.",
+                    "Maybe, if you don't have to eat with him, which feels like you'd be approving of him.",
+                    "You turn down the assignment—you could never feel comfortable talking with him"
+                ],
+                ["You'll probably come up with even more possible endings as you mull the story over later.",
+                    "You have no trouble figuring out the ending that feels 'right.'",
+                    "How frustrating! Why don't they just tell you how the story turns out and be done with it?"
+                ],
+                ["I think they're pretty fun",
+                    "I love them, but only if I win ",
+                    "regardless of winning , 'They're not really my thing'"
+                ],
+                ["I contribute an equal amount compared with everyone else",
+                    "I insist on doing everything because I know it'll be right then",
+                    "I take a backseat and let someone more keen do the majority of the work "
+                ],
+                [
+                    "Strongly agree",
+                    "Neither Agree nor disagree",
+                    "Strongly Disagree"
+                ],
+                [
+                    "Strongly agree",
+                    "Neither Agree nor disagree",
+                    "Strongly Disagree"
+                ],
+                [
+                    "True",
+                    "Not known",
+                    "False"
+                ],
+                [
+                    "False",
+                    "Not known",
+                    "True"
+                ],
+                [
+                    "Take on as much of their share of the work as possible",
+                    "Focus on other things",
+                    "Remind them of the impending deadline three times a day"
+                ],
+                [
+                    "Allocate a maximum of two hours for it, then move on to something else",
+                    "Sort through the papers, all the while cursing bureaucracy",
+                    "Whizz through the pile of paper angrily; too bad if you haven’t sorted it all accurately"
+                ]
+            ];
+            var questions = [
+                "Imagine your local online newspaper is offering you the chance to lunch with and interview a famous dictator, known for his mistreatment of women.",
+                "You watched a film with an uncertain ending: maybe the heroine marries the guy or else she might go off on her own.",
+                "How do you feel about board games?",
+                "What kind of person are you in a group project?",
+                "It is easy for me to have and sustain a strong sense of intention, resolve, and commitment toward my goals.",
+                "I am mindful of the difference between desires that are “wholesome” (good for me and perhaps others as well) and desires that are not",
+                "I’m pretty good at resisting temptation.",
+                "If something is fun, I’ll probably do it, even if I know it’s bad for me.",
+                "A colleague is making slow progress on a deadline you’re working on together. You:",
+                "You finally get around to dealing with that boring pile of filing. You:"
+            ];
+            $("#start").on('click', function() {
+                $name = $(':input[type="text"]').val();
+                $no = $(':input[type="number"]').val();
+                $email = $(':input[type="email"]').val();
+                if ($name != "" && $no != "" && $email != "") {
+                    $("#startdiv").hide();
+                    $("#testdiv").toggle();
+                    $("#name").append($("#pname").val());
+                    var answers = [];
+                    var i = 0;
+                    var temp = 0;
+                    $("#question").val('');
+                    $("#questno").append((i + 1) + "/10");
+                    $("#question").append((i + 1) + ") " + questions[i + 1]);
+                    $("#option1").append(options[i][0]);
+                    $("#option2").append(options[i][1]);
+                    $("#option3").append(options[i][2]);
+                    $("#submit").hide();
+                    $("#next").on('click', function() {
+                        if (i < 9) {
+                            if ($('#agree').is(':checked')) {
+                                temp = 2;
+                            } else if ($('#neutral').is(':checked')) {
+                                temp = 1;
+                            } else if ($('#disagree').is(':checked')) {
+                                temp = 0;
+                            } else {
+                                $.notify({
+                                    icon: 'glyphicon glyphicon-warning-sign',
+                                    message: 'Choose any option to proceed.'
+                                }, {
+                                    position: null,
+                                    type: 'danger',
+                                    placement: {
+                                        from: "bottom",
+                                        align: "center"
+                                    },
+                                });
+                                return false;
+                            }
+                            answers[i] = temp;
+                            i++;
+                            $("#questno , #question , #option1 , #option2 , #option3").empty();
+                            $("#questno").append((i + 1) + "/10");
+                            $("#question").append((i + 1) + ") " + questions[i]);
+                            $("#option1").append('<input type="radio" name="optradio" id="agree">&nbsp;' + options[i][0]);
+                            $("#option2").append('<input type="radio" name="optradio" id="neutral">&nbsp;' + options[i][1]);
+                            $("#option3").append('<input type="radio" name="optradio" id="disagree">&nbsp;' + options[i][2]);
+                            if (i == 9) {
+                                $("#submit").show();
+                            }
+                        }
+                    });
+                    $("#previous").on('click', function() {
+                        if (i > 0) {
+                            if ($('#agree').is(':checked')) {
+                                temp = 2;
+                            } else if ($('#neutral').is(':checked')) {
+                                temp = 1;
+                            } else if ($('#disagree').is(':checked')) {
+                                temp = 0;
+                            } else {
+                                $.notify({
+                                    icon: 'glyphicon glyphicon-warning-sign',
+                                    message: 'Choose any option to proceed.'
+                                }, {
+                                    position: null,
+                                    type: 'danger',
+                                    placement: {
+                                        from: "bottom",
+                                        align: "center"
+                                    },
+                                });
+                                return false;
+                            }
+                            answers[i] = temp;
+                            i--;
+                            $("#questno , #question , #option1 , #option2 , #option3").empty();
+                            $("#questno").append((i + 1) + "/10");
+                            $("#question").append((i + 1) + ") " + questions[i]);
+                            $("#option1").append('<input type="radio" name="optradio" id="agree">&nbsp;' + options[i][0]);
+                            $("#option2").append('<input type="radio" name="optradio" id="neutral">&nbsp;' + options[i][1]);
+                            $("#option3").append('<input type="radio" name="optradio" id="disagree">&nbsp;' + options[i][2]);
+                        }
+                        if (i != 9) {
+                            $("#submit").hide();
+                        }
+                    });
+                } else {
+                    $.notify({
+                        icon: 'glyphicon glyphicon-warning-sign',
+                        message: 'Please fill the form to start your test.'
+                    }, {
+                        position: null,
+                        type: 'danger',
+                        placement: {
+                            from: "bottom",
+                            align: "center"
+                        },
+                    });
+                }
+                $("#submit").on('click', function() {
+                    answers[i] = temp;
+                    var anskey = [];
+                    $("#testdiv").hide();
+                    $("#answerdiv").show();
+                    var k = 0;
+                    for (var j = 0; j < 10; j++) {
+                        anskey[k++] = answers[j] + answers[++j];
+                    }
+                    $("#resultname").append($name);
+                    var ctx = document.getElementById("chart");
+                    var myChart = new Chart(ctx, {
+                        type: 'polarArea',
+                        data: {
+                            labels: ["OpenMind", "Competitve", "SelfStarter", "Discipline", "Patience"],
+                            datasets: [{
+                                label: 'Personality Test',
+                                data: anskey,
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)'
+                                ],
+                                borderColor: [
+                                    'rgba(255,99,132,1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)'
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            responsiveAnimationDuration: 200,
+                            maintainAspectRatio: true,
+                            /*scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        beginAtZero: true
+                                    }
+                                }]
+                            }*/
+                        }
+                    });
+                });
+            });
+
+        });
+    </script>
+</body>
+
+</html>
