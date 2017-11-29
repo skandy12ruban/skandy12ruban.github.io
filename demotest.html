@@ -18,28 +18,34 @@
 
 <body style="background-color:#06B6FF">
     <section id="welcome" style="background-image: url('assets/images/bg.jpg')">
-        <div class="container">
-            <nav class="navbar ">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                          <span class="icon-bar"></span>
-                          <span class="icon-bar"></span>
-                          <span class="icon-bar"></span> 
-                        </button>
-                    </div>
-                    <div class="collapse navbar-collapse" id="myNavbar">
-                        <ul class="nav nav-justified navbar-right">
-                            <li class="active"><a href="#" style="color:black; font-size:15px ;font-weight: bold">Home</a></li>
-                            <li><a href="#" style="color:black; font-size:15px; font-weight: bold">About Us</a></li>
-                            <li><a href="#" style="color:black; font-size:15px; font-weight: bold">Business</a></li>
-                            <li><a href="#" style="color:black; font-size:15px; font-weight: bold">Contact</a></li>
-                            <li><a href="#" style="color:black; font-size:15px; font-weight: bold"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                            <li><a href="#" style="color:black; font-size:15px; font-weight: bold"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                        </ul>
-                    </div>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                    <a href="#" class="navbar-brand" style="color:orange; font-size:20px;">Alagar Acadamy </a>
                 </div>
-            </nav>
+                <!-- Collection of nav links and other content for toggling -->
+                <div id="navbarCollapse" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html" style="color:black; font-size:15px ;">Home</a></li>
+                        <li><a href="aboutus.html" style="color:black; font-size:15px; ">About Us</a></li>
+                        <li><a href="buisness.html" style="color:black; font-size:15px; ">Business</a></li>
+                        <li><a href="contact.html" style="color:black; font-size:15px; ">Contact</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="signup.html" style="color:black; font-size:15px; "><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a href="login.html" style="color:black; font-size:15px; "><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
             <div class="row" id="startdiv">
                 <h2>Take your demo Test</h2>
                 <hr>
@@ -119,7 +125,7 @@
                         </div>
                         <div class="col-md-6" align="center">
                             <h2>Need to pay attention?</h2>
-                            <a href="" class="btn btn-lg btn-success">Enroll Now</a>
+                            <a href="signup.html" class="btn btn-lg btn-success">Enroll Now</a>
                         </div>
                     </div>
                 </div>
