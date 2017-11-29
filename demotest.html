@@ -342,7 +342,7 @@
                     $("#resultname").append($name);
                     var ctx = document.getElementById("chart");
                     var myChart = new Chart(ctx, {
-                        type: 'Bar',
+                        type: 'bar',
                         data: {
                             labels: ["OpenMind", "Competitve", "SelfStarter", "Discipline", "Patience"],
                             datasets: [{
@@ -369,13 +369,13 @@
                             responsive: true,
                             responsiveAnimationDuration: 200,
                             maintainAspectRatio: true,
-                            /*scales: {
+                            scales: {
                                 yAxes: [{
                                     ticks: {
                                         beginAtZero: true
                                     }
                                 }]
-                            }*/
+                            }
                         }
                     });
                 });
