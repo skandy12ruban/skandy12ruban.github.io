@@ -29,7 +29,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                <a href="#" class="navbar-brand" style="color:orange; font-size:20px;">Alagar Acadamy </a>
+                <a href="#" class="navbar-brand" style="color:black; font-size:20px;">Alagar Acadamy </a>
             </div>
             <!-- Collection of nav links and other content for toggling -->
             <div id="navbarCollapse" class="collapse navbar-collapse">
@@ -49,17 +49,23 @@
     <section style="color:black">
         <div class="container">
             <h2 align="center">Create your Account.</h2>
-
             <div class="row" style="padding-top:20px">
-                <div class="col-md-7" align="center" style="padding-top:40px;">
-                    <p style="font-size: 20px">One Account to learn, One Account to Earn</p>
-                    <img src="assets/images/sign-in.png" style="padding-top:30px;padding-bottom:30px" class="img-responsive" width="40%" height="40%" />
-                    <div style="padding-top:100px;">
+                <div class="col-md-7" align="center">
+                    <label labelfor="imgInp">Upload your profile picture</label>
+                    <img id='img-upload' class="img-responsive img-circle" width="200px" height="200px" />
+                    <div class="input-group form-group" style="padding-top:30px;padding-bottom:30px">
+                        <input type="file" id="imgInp" class="btn btn-default" accept=".png,.jpeg,jpg,.bmp,.JPG,.JPEG" />
+                    </div>
+                    <div style="padding-top:20px;">
+                        <p style="font-size: 20px">One Account to learn, One Account to Earn</p>
+                        <img src="assets/images/sign-in.png" style="padding-top:30px;padding-bottom:30px" class="img-responsive" width="40%" height="40%" />
+                    </div>
+                    <div style="padding-top:20px;">
                         <p style="font-size: 20px">Learn Anywhere, Anytime, using Any devices</p>
                         <img src="assets/images/Device.png" style="padding-top:30px;padding-bottom:30px" class="img-responsive" width="50%" height="50%" />
                     </div>
                 </div>
-                <div class="col-md-5" style="background-color:#F1F1F1;padding-top:20px">
+                <div class="col-md-5" class="jumbotron" style="background-color:#F1F1F1;padding-top:20px">
                     <form>
                         <div class="form-group form-inline">
                             <label for="text">Name</label>
@@ -69,15 +75,11 @@
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" placeholder="Username@email.com" required>
+                            <input type="email" id="email" class="form-control" placeholder="Username@email.com" required>
                         </div>
                         <div class="form-group">
                             <label for="password">Create a Password</label>
-                            <input type="password" class="form-control" placeholder="Password" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Confirm Password</label>
-                            <input type="password" class="form-control" placeholder="Password" required>
+                            <input type="password" id="password" class="form-control" placeholder="Password" required>
                         </div>
                         <div class="form-group">
                             <label for="password">Date of Birth</label>
@@ -93,7 +95,7 @@
                         </div>
                         <div class="form-group">
                             <label for="number">Mobile Phone</label>
-                            <input class="form-control" id="number" type="number" maxlength="10" />
+                            <input class="form-control" id="number" type="number" maxlength="10" required/>
                         </div>
                         <div class="form-group">
                             <label for="location">Location:</label>
@@ -353,7 +355,7 @@
                             <input class="btn btn-info" type="submit" value="Create Account" />
                         </div>
                         <div class="form-group form-inline">
-                            <label><input class="btn btn-info" type="checkbox"/> I Agree to the terms of services, </label>
+                            <label><input class="btn btn-info" type="checkbox" required/> I Agree to the terms of services, </label>
                             <p>By clicking <span class="btn-info">Create Account</span>, you agree to the <a href="">Terms & Conditions</a> set out by this site, including Cookies Use.
                             </p>
                         </div>
@@ -377,5 +379,45 @@
         </footer>
     </section>
 </body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $(document).on('change', '.btn-file :file', function() {
+            var input = $(this),
+                label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+            input.trigger('fileselect', [label]);
+        });
+
+        $('.btn-file :file').on('fileselect', function(event, label) {
+
+            var input = $(this).parents('.input-group').find(':text'),
+                log = label;
+
+            if (input.length) {
+                input.val(log);
+            } else {
+                if (log) alert(log);
+            }
+
+        });
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('#img-upload').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#imgInp").change(function() {
+            readURL(this);
+        });
+    });
+</script>
 
 </html>
