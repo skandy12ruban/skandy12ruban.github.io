@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" style="background-color:#F1F1F1 ">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -41,7 +41,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="signup.html" style="color:black; font-size:15px; "><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href="login.html" style="color:black; font-size:15px; "><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li><a href="login.php" style="color:black; font-size:15px; "><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 </ul>
             </div>
         </div>
@@ -51,11 +51,13 @@
             <h2 align="center">Create your Account.</h2>
             <div class="row" style="padding-top:20px">
                 <div class="col-md-7" align="center">
+                    <!--
                     <label labelfor="imgInp">Upload your profile picture</label>
                     <img id='img-upload' class="img-responsive img-circle" width="200px" height="200px" />
                     <div class="input-group form-group" style="padding-top:30px;padding-bottom:30px">
-                        <input type="file" id="imgInp" class="btn btn-default" accept=".png,.jpeg,jpg,.bmp,.JPG,.JPEG" />
+                        <input type="file" id="imgInp" name="pic" class="btn btn-default" accept=".png,.jpeg,jpg,.bmp,.JPG,.JPEG" required />
                     </div>
+                -->
                     <div style="padding-top:20px;">
                         <p style="font-size: 20px">One Account to learn, One Account to Earn</p>
                         <img src="assets/images/sign-in.png" style="padding-top:30px;padding-bottom:30px" class="img-responsive" width="40%" height="40%" />
@@ -66,28 +68,28 @@
                     </div>
                 </div>
                 <div class="col-md-5" class="jumbotron" style="background-color:#F1F1F1;padding-top:20px">
-                    <form>
+                    <form method="POST" action="assets/php/signup.php">
                         <div class="form-group form-inline">
                             <label for="text">Name</label>
                             </br>
-                            <input type="text" class="form-control" placeholder="First" required>
-                            <input type="text" class="form-control" placeholder="Last">
+                            <input type="text" class="form-control" name="fname" placeholder="First" required>
+                            <input type="text" class="form-control" name="lname" placeholder="Last">
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" class="form-control" placeholder="Username@email.com" required>
+                            <input type="email" name="email" class="form-control" placeholder="Username@email.com" required>
                         </div>
                         <div class="form-group">
                             <label for="password">Create a Password</label>
-                            <input type="password" id="password" class="form-control" placeholder="Password" required>
+                            <input type="password" name="password" class="form-control" placeholder="Password" required>
                         </div>
                         <div class="form-group">
                             <label for="password">Date of Birth</label>
-                            <input type="date" class="form-control" required>
+                            <input type="date" name="dob" class="form-control" required max="new Date()">
                         </div>
                         <div class="form-group">
                             <label for="gender">Gender:</label>
-                            <select class="form-control" id="gender">
+                            <select class="form-control" name="gender">
                               <option>Male</option>
                               <option>Female</option>
                               <option>Other</option>
@@ -95,11 +97,11 @@
                         </div>
                         <div class="form-group">
                             <label for="number">Mobile Phone</label>
-                            <input class="form-control" id="number" type="number" maxlength="10" required/>
+                            <input class="form-control" name="telno" type="number" maxlength="10" required/>
                         </div>
                         <div class="form-group">
                             <label for="location">Location:</label>
-                            <select class="form-control" id="location">
+                            <select class="form-control" name="location">
                                     <option value="AF">Afghanistan</option>
                                     <option value="AX">Åland Islands</option>
                                     <option value="AL">Albania</option>
@@ -379,45 +381,8 @@
         </footer>
     </section>
 </body>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script>
-    $(document).ready(function() {
-        $(document).on('change', '.btn-file :file', function() {
-            var input = $(this),
-                label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-            input.trigger('fileselect', [label]);
-        });
-
-        $('.btn-file :file').on('fileselect', function(event, label) {
-
-            var input = $(this).parents('.input-group').find(':text'),
-                log = label;
-
-            if (input.length) {
-                input.val(log);
-            } else {
-                if (log) alert(log);
-            }
-
-        });
-
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function(e) {
-                    $('#img-upload').attr('src', e.target.result);
-                }
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        $("#imgInp").change(function() {
-            readURL(this);
-        });
-    });
 </script>
 
 </html>
