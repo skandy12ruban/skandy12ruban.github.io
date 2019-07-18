@@ -19,8 +19,8 @@
   gtag('config', 'UA-144042306-1',{
   	'user_id' : Math.random()
   });
-
-
+  
+  gtag('set', {'user_id': '10102'});
 </script>
 	</head>
 	<body id="top">
@@ -47,7 +47,7 @@
 							Web Developer | UI/UX Designer | Movie/Music Editor | VFX designer | Autodidactor
 						</p>
 						<ul class="actions">
-							<li><a href="assets/pdf/profile.pdf" class="button" download="download">Learn More</a></li>
+							<li><a href="assets/pdf/profile.pdf" id='learn-more' class="button" download="download">Learn More</a></li>
 						</ul>
 					</section>
 
@@ -455,5 +455,12 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+		    <scirpt>
+		    	
+		    	$("#learn-more").click(function(){
+                    gtag('event','learn-more',)
+
+		    	})
+		    </scirpt>
 	</body>
 </html>
