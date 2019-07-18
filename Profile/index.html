@@ -16,11 +16,9 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-144042306-1',{
-  	'user_id' : Math.random()
-  });
-  
-  gtag('set', {'user_id': '10102'});
+  gtag('config', 'UA-144042306-1');
+  var rangen = Math.floor(Math.random() * (+1000 - +2000)) + +min; 
+  gtag('set', {'user_id': rangen});
 </script>
 	</head>
 	<body id="top">
@@ -134,7 +132,7 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
-		    <scrIpt>
+		    <script>
 		    	
 		    	$("#learn-more").click(function(){
                     e.preventDefault();
