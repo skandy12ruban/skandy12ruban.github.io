@@ -8,21 +8,20 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!-- Google Tag Manager -->
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144042306-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-144042306-1');
-  var rangen = Math.floor(Math.random() * (+1000 - +2000)) + +min; 
-  gtag('set', {'user_id': rangen});
-</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TQSBBCS');</script>
+<!-- End Google Tag Manager -->
 	</head>
 	<body id="top">
 		<!-- Header -->
+		<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQSBBCS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 			<header id="header">
 				<div class="inner">
 					<a href="#" class="image avatar"><img src="https://scontent.fmaa3-1.fna.fbcdn.net/v/t1.0-9/18118556_809335975891620_3366159225585097698_n.jpg?_nc_cat=0&oh=561180bd39b7b3954b1676880be3e15e&oe=5B61CFEF" alt="" /></a>
@@ -45,7 +44,7 @@
 							Web Developer | UI/UX Designer | Movie/Music Editor | VFX designer | Autodidactor
 						</p>
 						<ul class="actions">
-							<li><a href="#" id='learn-more' class="button" download="download">Learn More</a></li>
+							<li><a href="#" id='learn-more' onclick="dataLayer.push({'event': 'button1-click'});" class="button" download="download">Learn More</a></li>
 						</ul>
 					</section>
 
@@ -132,16 +131,5 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
-		    <script>
-		    	
-		    	$("#learn-more").click(function(){
-                    e.preventDefault();
-                    gtag('event','learn-more', {
-                      'event_callback' : function() {
-                        window.location.href = 'assets/pdf/profile.pdf';
-                      }
-                    })
-		    	})
-		    </script>
 	</body>
 </html>
