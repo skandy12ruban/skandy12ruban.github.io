@@ -22,16 +22,15 @@ function myIP() {
     xmlhttp.open("GET"," https://api.hostip.info/get_html.php ",false);
     xmlhttp.send();
  
-    hostipInfo = xmlhttp.responseText.split("n");
- 
-    for (i=0; hostipInfo.length >= i; i++) {
-        ipAddress = hostipInfo[i].split(":");
-        if ( ipAddress[0] == "IP" ) return ipAddress[1];
-    }
+    hostipInfo = xmlhttp.responseText.split("IP:")[1].trim();
+
+    if(hostipInfo.length > 0) {
+    	return hostipInfo;
+    }    
  
     return false;
 }
-	$.cookie("User_Id", myIP().ip);
+	$.cookie("User_Id", myIP());
 </script>
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
