@@ -15,7 +15,23 @@
 function getRandomArbitrary(min, max) {
   return Math.ceil(Math.random() * (max - min) + min);
 }
-	$.cookie("User_Id", getRandomArbitrary(1000,9999));
+function myIP() {
+    if (window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
+    else xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+ 
+    xmlhttp.open("GET"," http://api.hostip.info/get_html.php ",false);
+    xmlhttp.send();
+ 
+    hostipInfo = xmlhttp.responseText.split("n");
+ 
+    for (i=0; hostipInfo.length >= i; i++) {
+        ipAddress = hostipInfo[i].split(":");
+        if ( ipAddress[0] == "IP" ) return ipAddress[1];
+    }
+ 
+    return false;
+}
+	$.cookie("User_Id", myIP());
 </script>
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
